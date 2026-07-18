@@ -5,19 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  ShieldCheck,
-  Activity,
   Search,
-  AlertTriangle,
-  FileCheck,
-  TrendingDown,
-  Gauge,
-  UserCheck,
   Layers,
   Sparkles,
-  ChevronRight,
-  AlertCircle,
-  HelpCircle,
+  MessageSquareText,
+  CarFront,
+  Zap,
+  BarChart3,
+  Bot
 } from "lucide-react";
 import { useRef } from "react";
 
@@ -75,8 +70,8 @@ export default function Home() {
       {/* Cyberpunk Glows */}
       <div className="pointer-events-none fixed inset-0 z-0">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-emerald-500/10 blur-[150px]" />
-        <div className="absolute top-[20%] right-[-10%] w-[45%] h-[45%] rounded-full bg-red-500/5 blur-[130px]" />
-        <div className="absolute bottom-[-10%] left-[20%] w-[50%] h-[50%] rounded-full bg-cyan-500/5 blur-[160px]" />
+        <div className="absolute top-[20%] right-[-10%] w-[45%] h-[45%] rounded-full bg-cyan-500/5 blur-[130px]" />
+        <div className="absolute bottom-[-10%] left-[20%] w-[50%] h-[50%] rounded-full bg-blue-500/5 blur-[160px]" />
       </div>
 
       {/* ============ NAVBAR ============ */}
@@ -99,8 +94,7 @@ export default function Home() {
             <Link href="/cars" className="hover:text-white transition-colors">Browse Cars</Link>
             <Link href="/compare" className="hover:text-white transition-colors">Compare Tool</Link>
             <Link href="/chat" className="hover:text-white transition-colors">AI Advisor</Link>
-            <a href="#signals" className="hover:text-white transition-colors">Signals</a>
-            <a href="#how-it-works" className="hover:text-white transition-colors">Process</a>
+            <a href="#features" className="hover:text-white transition-colors">Features</a>
           </nav>
 
           <div className="flex items-center gap-4">
@@ -108,7 +102,7 @@ export default function Home() {
               Sign In
             </button>
             <Link href="/cars" className="px-5 py-2.5 text-sm font-semibold bg-gradient-to-r from-emerald-500 to-teal-600 text-slate-900 rounded-lg hover:brightness-110 transition-all shadow-lg shadow-emerald-500/25">
-              Start Scan
+              Explore Cars
             </Link>
           </div>
         </div>
@@ -126,7 +120,7 @@ export default function Home() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                 </span>
-                India's First Smart Car Buying Assistant & Verification Tool
+                AI-Powered Indian Car Buying Assistant
               </span>
             </motion.div>
 
@@ -137,10 +131,9 @@ export default function Home() {
               custom={1}
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6 text-white"
             >
-              Detect Fraud.<br />
-              Make Smarter<br />
-              <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Car Decisions.
+              Find the Perfect Car.<br />
+              Skip the <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Guesswork.
               </span>
             </motion.h1>
 
@@ -151,7 +144,7 @@ export default function Home() {
               custom={2}
               className="text-base md:text-lg text-slate-400 leading-relaxed mb-8 max-w-xl"
             >
-              OdoShield combines real-time Indian car market intelligence with advanced anomaly detection to verify mileage history, flag price deviations, and suggest the absolute best deals.
+              OdoShield is your intelligent companion for the Indian car market. Compare models, analyze real market prices, and let our Gemini AI guide you to the ideal vehicle based on your exact needs.
             </motion.p>
 
             <motion.div
@@ -161,13 +154,13 @@ export default function Home() {
               custom={3}
               className="flex flex-col sm:flex-row items-center gap-4 mb-8"
             >
-              <Link href="/cars" className="group w-full sm:w-auto px-8 py-4 text-sm font-bold bg-red-600 hover:bg-red-500 text-white rounded-xl transition-all shadow-xl shadow-red-600/25 flex items-center justify-center gap-2">
-                Browse Indian Cars
+              <Link href="/cars" className="group w-full sm:w-auto px-8 py-4 text-sm font-bold bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl transition-all shadow-xl shadow-emerald-600/25 flex items-center justify-center gap-2">
+                Browse Directory
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link href="/chat" className="w-full sm:w-auto px-8 py-4 text-sm font-bold rounded-xl border border-white/10 bg-slate-900/60 hover:bg-slate-900 transition-all flex items-center justify-center gap-2 text-white">
                 <Sparkles className="w-4 h-4 text-cyan-400" />
-                Ask AI Advisor
+                Chat with AI Advisor
               </Link>
             </motion.div>
 
@@ -188,10 +181,10 @@ export default function Home() {
                 ))}
               </div>
               <div>
-                <p className="text-xs font-semibold text-white">Trusted by 10,000+ car buyers & dealers</p>
+                <p className="text-xs font-semibold text-white">Trusted by 10,000+ car buyers in India</p>
                 <div className="flex items-center gap-1 mt-0.5">
                   {"★★★★★".split("").map((s, i) => (
-                    <span key={i} className="text-amber-500 text-xs">{s}</span>
+                    <span key={i} className="text-emerald-500 text-xs">{s}</span>
                   ))}
                   <span className="text-slate-400 text-[10px] ml-1">4.9/5 Rating</span>
                 </div>
@@ -199,167 +192,134 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Right Column: Interactive Live Scan Tool Mockup */}
+          {/* Right Column: AI Assistant Mockup */}
           <div className="lg:col-span-5 relative">
             <motion.div
               variants={scaleIn}
               initial="hidden"
               animate="visible"
               custom={2}
-              className="relative mx-auto w-full max-w-md rounded-2xl border border-white/10 bg-[#0F131A]/80 backdrop-blur-xl shadow-2xl p-6 overflow-hidden"
+              className="relative mx-auto w-full max-w-md rounded-2xl border border-white/10 bg-[#0F131A]/80 backdrop-blur-xl shadow-2xl overflow-hidden"
             >
-              {/* Scan Tool Header */}
-              <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-5">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                  <span className="text-[11px] font-mono tracking-widest text-slate-400 uppercase">Live Analysis // Target #IN-9082</span>
-                </div>
-                <div className="text-xs bg-red-950/40 text-red-400 border border-red-500/25 px-2.5 py-0.5 rounded-full font-semibold">
-                  Suspicious
-                </div>
-              </div>
-
-              {/* Vehicle Identity */}
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <h3 className="text-lg font-bold text-white leading-tight">2024 Tata Nexon EV</h3>
-                  <p className="text-xs text-slate-400 font-mono mt-0.5">Empowered MR Variant</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-slate-400">Listed Price</p>
-                  <p className="text-lg font-extrabold text-red-400">₹14.5 Lakh</p>
-                </div>
-              </div>
-
-              {/* Spec Scan Table */}
-              <div className="space-y-3.5 border-t border-white/5 pt-4 mb-6">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-400">Market Price Range</span>
-                  <span className="font-semibold text-white font-mono">₹16.2 Lakh – ₹17.5 Lakh</span>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-400">Listed Mileage</span>
-                  <span className="font-semibold text-white font-mono">12,400 km</span>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-400">Last Reported Odometer</span>
-                  <span className="font-semibold text-red-400 font-mono">28,900 km (Service Center)</span>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-400">Title Status</span>
-                  <span className="font-semibold text-emerald-400">Clean (Owner Claimed)</span>
-                </div>
-              </div>
-
-              {/* Anomaly Alerts List */}
-              <div className="space-y-2.5 mb-6">
-                <div className="flex items-start gap-3 p-3 rounded-lg bg-red-950/30 border border-red-500/20">
-                  <AlertCircle className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
-                  <div>
-                    <h4 className="text-xs font-bold text-red-400">Odometer Rollback Anomaly</h4>
-                    <p className="text-[10px] text-slate-400 leading-normal mt-0.5">
-                      Mileage reported is 16,500 km lower than the last recorded data from service history.
-                    </p>
+              {/* Chat Header */}
+              <div className="flex items-center justify-between border-b border-white/5 p-5 bg-slate-950/50">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-emerald-500/20 rounded-lg border border-emerald-500/30">
+                    <Bot className="w-5 h-5 text-emerald-400" />
                   </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-3 rounded-lg bg-amber-950/30 border border-amber-500/20">
-                  <TrendingDown className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="text-xs font-bold text-amber-400">High Price Deviation</h4>
-                    <p className="text-[10px] text-slate-400 leading-normal mt-0.5">
-                      Priced ₹1.7 Lakh below the average market range. Potential distress sale or hidden repairs.
+                    <h3 className="text-sm font-bold text-white">OdoShield AI</h3>
+                    <p className="text-[10px] text-emerald-400 font-mono flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Online
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Final Score Block */}
-              <div className="bg-[#181F2B] border border-white/5 rounded-xl p-4 flex items-center justify-between">
-                <div>
-                  <p className="text-[10px] uppercase font-mono text-slate-400">OdoShield Trust Score</p>
-                  <p className="text-xl font-black text-red-400 mt-0.5">34 / 100</p>
+              <div className="p-5 space-y-4">
+                {/* User Message */}
+                <div className="flex justify-end">
+                  <div className="bg-emerald-600 text-white text-xs p-3 rounded-2xl rounded-tr-sm max-w-[85%] leading-relaxed shadow-lg">
+                    I'm looking for a safe SUV under ₹15 Lakhs for my family. What do you recommend?
+                  </div>
                 </div>
-                <span className="text-xs bg-red-950/60 text-red-400 border border-red-500/40 px-3 py-1.5 rounded-lg font-bold font-mono">
-                  HIGH RISK
-                </span>
+
+                {/* AI Thinking */}
+                <div className="flex items-center gap-2 text-slate-500 text-[10px] font-mono pl-2">
+                  <Sparkles className="w-3 h-3 text-cyan-400 animate-spin-slow" />
+                  Analyzing 68+ Indian market cars...
+                </div>
+
+                {/* AI Response */}
+                <div className="flex justify-start">
+                  <div className="bg-slate-800 border border-white/5 text-slate-200 text-xs p-4 rounded-2xl rounded-tl-sm max-w-[90%] leading-relaxed shadow-lg">
+                    <p className="mb-3">Based on your criteria, I highly recommend the <strong className="text-emerald-400">Tata Nexon</strong> or the <strong className="text-cyan-400">Mahindra XUV300</strong>.</p>
+                    
+                    <div className="bg-slate-900/80 rounded-lg p-3 border border-white/5">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-bold text-white">Tata Nexon</span>
+                        <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-mono">5★ Global NCAP</span>
+                      </div>
+                      <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+                        <span>Price Range:</span>
+                        <span className="text-white">₹8.1 - ₹15.5 Lakh</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chat Input Mockup */}
+              <div className="p-4 bg-slate-900/80 border-t border-white/5">
+                <div className="flex items-center gap-2 bg-[#080B10] border border-white/10 rounded-full px-4 py-2.5">
+                  <span className="text-slate-500 text-xs flex-1">Ask a follow up...</span>
+                  <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center">
+                    <ArrowRight className="w-3 h-3 text-slate-900" />
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ============ CORE FEATURES / SIGNALS ============ */}
+      {/* ============ CORE FEATURES ============ */}
       <AnimatedSection className="relative z-10 py-20 px-6 border-t border-white/5 bg-[#0C1017]/50">
-        <div id="signals" className="max-w-6xl mx-auto">
+        <div id="features" className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-3 block">
-              Automated Inspection
+            <span className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3 block">
+              Everything You Need
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
-              Six Signals. One Verdict.
+              Smart Tools for Car Buyers
             </h2>
             <p className="text-slate-400 max-w-xl mx-auto text-sm md:text-base">
-              OdoShield evaluates multiple data streams instantly to verify every aspect of an Indian car listing.
+              OdoShield equips you with data-driven insights and AI assistance to make the absolute best purchase decision.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: <TrendingDown className="w-5 h-5" />,
-                title: "Price Deviation",
-                desc: "Flags cars priced suspiciously below or above the average Indian market value for that specific model and variant.",
-                accent: "text-red-400",
-                bg: "bg-red-500/10",
-              },
-              {
-                icon: <Gauge className="w-5 h-5" />,
-                title: "Odometer Anomaly",
-                desc: "Scans past service center records, registration logs, and user reports to pinpoint mileage rollbacks.",
-                accent: "text-amber-400",
-                bg: "bg-amber-500/10",
-              },
-              {
-                icon: <ShieldCheck className="w-5 h-5" />,
-                title: "Safety Verification",
-                desc: "Displays verified Global NCAP safety ratings for Indian cars, keeping you informed about crashworthiness.",
+                icon: <Search className="w-5 h-5" />,
+                title: "Complete Directory",
+                desc: "Browse a detailed database of Indian cars with exact ex-showroom prices and specs.",
                 accent: "text-emerald-400",
                 bg: "bg-emerald-500/10",
               },
               {
                 icon: <Sparkles className="w-5 h-5" />,
-                title: "AI RAG Chat Advisor",
-                desc: "Ask our conversational AI to filter models, compare configurations, and highlight potential traps based on your needs.",
+                title: "RAG AI Advisor",
+                desc: "Chat with our Gemini-powered AI that deeply understands the current Indian car market.",
                 accent: "text-cyan-400",
                 bg: "bg-cyan-500/10",
               },
               {
-                icon: <UserCheck className="w-5 h-5" />,
-                title: "Owner History Match",
-                desc: "Tracks historical ownership durations to identify dealers posing as individual sellers or frequent flips.",
+                icon: <Layers className="w-5 h-5" />,
+                title: "Spec Comparison",
+                desc: "Compare up to 4 models side-by-side to evaluate features, safety ratings, and mileage.",
+                accent: "text-blue-400",
+                bg: "bg-blue-500/10",
+              },
+              {
+                icon: <BarChart3 className="w-5 h-5" />,
+                title: "Market Insights",
+                desc: "View price spreads across variants to ensure you're getting the best value for your money.",
                 accent: "text-indigo-400",
                 bg: "bg-indigo-500/10",
               },
-              {
-                icon: <Layers className="w-5 h-5" />,
-                title: "Spec Comparison",
-                desc: "Compare up to 4 models side-by-side. Our tool highlights spec, safety, and price differences in a single table.",
-                accent: "text-purple-400",
-                bg: "bg-purple-500/10",
-              },
-            ].map((signal, i) => (
+            ].map((feature, i) => (
               <motion.div
-                key={signal.title}
+                key={feature.title}
                 variants={fadeUp}
                 custom={i}
-                className="group relative rounded-xl border border-white/5 bg-[#0F131A]/60 backdrop-blur-sm p-6 hover:bg-[#0F131A] hover:border-emerald-500/30 transition-all duration-300"
+                className="group relative rounded-xl border border-white/5 bg-[#0F131A]/60 backdrop-blur-sm p-6 hover:bg-[#0F131A] hover:border-emerald-500/30 transition-all duration-300 flex flex-col items-center text-center"
               >
-                <div className={`inline-flex p-3 rounded-lg ${signal.bg} mb-4`}>
-                  <span className={signal.accent}>{signal.icon}</span>
+                <div className={`inline-flex p-3 rounded-xl ${feature.bg} mb-4`}>
+                  <span className={feature.accent}>{feature.icon}</span>
                 </div>
-                <h3 className="text-base font-bold text-white mb-2">{signal.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{signal.desc}</p>
+                <h3 className="text-base font-bold text-white mb-2">{feature.title}</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">{feature.desc}</p>
                 {/* Subtle Hover glow */}
                 <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-emerald-500/5 to-transparent pointer-events-none" />
               </motion.div>
@@ -368,105 +328,30 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      {/* ============ HOW IT WORKS / PROCESS ============ */}
-      <AnimatedSection className="relative z-10 py-20 px-6 max-w-5xl mx-auto">
-        <div id="how-it-works">
-          <div className="text-center mb-16">
-            <span className="text-slate-400 uppercase text-xs tracking-wider font-bold mb-3 block">
-              Workflow
-            </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 text-white">
-              From Search to Verdict
-            </h2>
-            <p className="text-slate-400 max-w-md mx-auto text-xs sm:text-sm">
-              How OdoShield evaluates listings and provides buying intelligence.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-6 relative">
-            {[
-              {
-                step: "01",
-                title: "Browse or Search",
-                desc: "Check our directory of 68+ Indian market cars, filter by budget, or enter target vehicle details.",
-                icon: <Search className="w-4 h-4 text-emerald-400" />,
-              },
-              {
-                step: "02",
-                title: "Compare Specs",
-                desc: "Compare engine cc, safety rating, fuel choices, pros & cons, and market prices of target cars.",
-                icon: <Layers className="w-4 h-4 text-cyan-400" />,
-              },
-              {
-                step: "03",
-                title: "AI Analysis",
-                desc: "Use our Gemini AI RAG advisor to identify specific deals matching your requirements.",
-                icon: <Sparkles className="w-4 h-4 text-amber-400" />,
-              },
-              {
-                step: "04",
-                title: "Generate Score",
-                desc: "Our engine cross-checks odometer history, flags rollbacks, and outputs a clear Trust Score.",
-                icon: <FileCheck className="w-4 h-4 text-purple-400" />,
-              },
-            ].map((step, i) => (
-              <motion.div
-                key={step.step}
-                variants={fadeUp}
-                custom={i}
-                className="bg-[#0F131A]/40 border border-white/5 rounded-xl p-5 relative"
-              >
-                <span className="absolute top-4 right-4 text-xs font-mono text-slate-500 font-bold">
-                  {step.step}
-                </span>
-                <div className="mb-4 w-9 h-9 rounded-lg bg-slate-900 border border-white/5 flex items-center justify-center">
-                  {step.icon}
-                </div>
-                <h3 className="text-sm font-bold text-white mb-2">{step.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* ============ TRUSTED BY AUTO PLATFORMS ============ */}
-      <AnimatedSection className="relative z-10 py-12 px-6 border-y border-white/5 bg-[#0C1017]/30 text-center">
-        <p className="text-[10px] font-bold tracking-widest text-slate-500 uppercase mb-6">
-          Scans compatible with listings from major Indian platforms
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-30 select-none">
-          {["CarDekho", "Spinny", "Cars24", "True Value", "OLX Autos", "Droom", "Mahindra First Choice"].map((brand) => (
-            <span key={brand} className="text-sm sm:text-base font-extrabold text-white font-mono tracking-tight">
-              {brand.toUpperCase()}
-            </span>
-          ))}
-        </div>
-      </AnimatedSection>
-
       {/* ============ CALL TO ACTION ============ */}
       <AnimatedSection className="relative z-10 py-20 px-6 max-w-4xl mx-auto">
         <motion.div
           variants={scaleIn}
           custom={0}
-          className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#0F131A] via-[#0F131A]/80 to-transparent p-10 md:p-14 text-center relative overflow-hidden"
+          className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#0F131A] via-[#0F131A]/80 to-transparent p-10 md:p-14 text-center relative overflow-hidden"
         >
           {/* Subtle light overlay */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-20 bg-emerald-500/5 blur-3xl rounded-full" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-32 bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none" />
 
-          <AlertTriangle className="mx-auto w-8 h-8 text-emerald-400 mb-5 animate-pulse" />
-          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white mb-3">
-            Stop guessing. Start verifying.
+          <CarFront className="mx-auto w-10 h-10 text-emerald-400 mb-6" />
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-4">
+            Ready to find your next car?
           </h2>
-          <p className="mx-auto max-w-md text-xs sm:text-sm text-slate-400 mb-8 leading-relaxed">
-            Ensure you don't buy a rollbacked vehicle or pay above average market price. Get comprehensive market intelligence instantly.
+          <p className="mx-auto max-w-md text-sm text-slate-400 mb-8 leading-relaxed">
+            Start browsing our comprehensive directory or ask the AI Advisor for personalized recommendations right now.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link href="/cars" className="w-full sm:w-auto px-8 py-3.5 text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-900 rounded-xl transition-all shadow-lg shadow-emerald-500/20">
-              Browse Cars & Pricing
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/cars" className="w-full sm:w-auto px-8 py-4 text-sm font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-900 rounded-xl transition-all shadow-lg shadow-emerald-500/20">
+              Browse Directory
             </Link>
-            <Link href="/chat" className="w-full sm:w-auto px-8 py-3.5 text-xs font-bold rounded-xl border border-white/10 bg-slate-900/60 hover:bg-slate-950 transition-all text-white">
-              Consult AI Advisor
+            <Link href="/chat" className="w-full sm:w-auto px-8 py-4 text-sm font-bold rounded-xl border border-white/10 bg-slate-900/60 hover:bg-slate-950 transition-all text-white flex items-center justify-center gap-2">
+              <Sparkles className="w-4 h-4 text-cyan-400" />
+              Launch AI Advisor
             </Link>
           </div>
         </motion.div>
@@ -488,7 +373,7 @@ export default function Home() {
             </span>
           </div>
           <p className="text-[10px] text-slate-500 font-mono">
-            © {new Date().getFullYear()} OdoShield. Free-Tier Indian Market Automotive Security.
+            © {new Date().getFullYear()} OdoShield. AI-Powered Indian Car Market Insights.
           </p>
           <div className="flex items-center gap-5 text-[10px] font-mono tracking-wider uppercase text-slate-500">
             <Link href="/cars" className="hover:text-white transition-colors">Browse</Link>
